@@ -1,0 +1,59 @@
+<h2>Defining a Template using ng-template</h2>
+<ng-template>
+  <p>Say Hello</p>
+</ng-template>
+
+<h1>ng-template & TemplateRef</h1>
+<h2>Using ngTemplateOutlet</h2>
+<ng-template #sayHelloTemplate>
+  <p>Say Hello</p>
+</ng-template>
+<ng-container *ngTemplateOutlet="sayHelloTemplate">
+  this text is not displayed
+</ng-container>
+
+<ng-template #sayAnotherHelloTemplate>
+  <p>Say Another Hello</p>
+</ng-template>
+
+
+<label>
+  <input  [(ngModel)]="selected" type="checkbox" >Select me
+</label>
+
+<div *ngIf="selected">
+  <p>You are selected</p>
+</div>
+<ng-template [ngIf]="selected">
+  <div>
+    <p>You are selected</p>
+  </div>
+</ng-template>
+
+<div *ttif="selected">
+  <p>Using the ttif directive via *ttif</p>
+</div>
+
+<ng-template [ttif]="selected">
+  <div>
+    <p>Using the ttif directive via ng-template</p>
+  </div>
+</ng-template>
+<h1>Simple component</h1>
+<app-simple></app-simple>
+
+<h1>Static template</h1>
+<ng-template #static>
+  I am a static template with no content
+</ng-template>
+
+<ng-template #messageTemplate
+      let-templateMessage="message">
+      {{templateMessage}}
+</ng-template>
+
+<h1>Tab component static child</h1>
+<app-tab [childTemplate]="static"></app-tab>
+
+<h1>Tab component template child</h1>
+<app-tab  [childTemplate]="messageTemplate"></app-tab>

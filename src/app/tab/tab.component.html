@@ -1,0 +1,14 @@
+<h3></h3>
+<div *ngIf="value;else childTemplate">
+  Hello I am the template
+</div>
+
+<h3>Temp template</h3>
+<div *ngIf="value;else temp">
+  Hello I am the template
+</div>
+
+<ng-template #temp>
+  <ng-template *ngTemplateOutlet="childTemplate;context:ctx">
+</ng-template>
+

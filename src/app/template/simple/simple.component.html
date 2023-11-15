@@ -1,0 +1,22 @@
+
+<h3>ngTemplateOutlet demo</h3>
+<ng-template
+      #simple
+      let-name="name"
+      let-hobies="hobies">
+
+  Hello {{name}}
+  <hr>
+  <li *ngFor="let item of hobies" >{{item}}</li>
+</ng-template>
+<div  *ngTemplateOutlet="simple;context:{name: 'farhad', hobies: ['game', 'filming']}"></div>
+
+<h3>NgIf demo</h3>
+<div *ngIf="true">
+  I will be show if condition is true
+</div>
+<ng-template  [ngIf]="true">
+  <div>
+    I will be show if condition is true
+  </div>
+</ng-template>
