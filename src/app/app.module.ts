@@ -8,6 +8,7 @@ import { SimpleComponent } from './template/simple/simple.component';
 import { ChildTemplateComponent } from './child-template/child-template.component';
 import { TabComponent } from './tab/tab.component';
 import { TtifDirective } from './ttif.directive';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TtifDirective } from './ttif.directive';
     SimpleComponent,
     ChildTemplateComponent,
     TabComponent,
-    TtifDirective
+    TtifDirective,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
