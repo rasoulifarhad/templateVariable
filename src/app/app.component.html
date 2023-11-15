@@ -39,6 +39,86 @@
     <p>Using the ttif directive via ng-template</p>
   </div>
 </ng-template>
+
+<h2>Using ngTemplate with ngIf then & else</h2>
+
+<div *ngIf="selected;then thenBlock1 else elseBlock1">
+  <p>This content is not shown</p>
+</div>
+
+<ng-template #thenBlock1>
+  <p>content to render when the selected is true</p>
+</ng-template>
+
+<ng-template #elseBlock1>
+  <p>content to render when the selected is false</p>
+</ng-template>
+
+<ng-template [ngIf]="selected" [ngIfThen]="thenBlock2" [ngIfElse]="elseBlock2">
+  <div>
+    <p>this content is not shown</p>
+  </div>
+</ng-template>
+
+<ng-template #thenBlock2>
+  <p>content to render when the selected is true</p>
+</ng-template>
+
+<ng-template #elseBlock2>
+  <p>content to render when the selected is false</p>
+</ng-template>
+
+<h2>Using *ngFor directive</h2>
+<div>
+  <ul>
+    <li *ngFor="let movie of movies; let i=index; let even=even; trackBy: trackById">
+      {{movie.title}} -- {{movie.director}}
+    </li>
+  </ul>
+
+</div>
+
+<h2>Using ngTemplate with ngFor</h2>
+<div>
+  <ul>
+    <ng-template
+      ngFor let-movie [ngForOf]="movies"
+      let-i="index"
+      let-even="even"
+      [ngForTrackBy]="trackById"
+    >
+      <li>{{movie.title}} -- {{movie.director}}</li>
+    </ng-template>
+  </ul>
+</div>
+
+<h2>Using ngswitch directive</h2>
+<input type="text" [(ngModel)]="num">
+
+<div [ngSwitch]="num">
+  <div *ngSwitchCase="1">One</div>
+  <div *ngSwitchCase="2">Two</div>
+  <div *ngSwitchCase="3">Three</div>
+  <div *ngSwitchDefault>Thids is default</div>
+
+</div>
+
+<h2>Using ngTemplate with ngswitch</h2>
+<div [ngSwitch]="num">
+  <ng-template [ngSwitchCase]="1">
+    <div>One</div>
+  </ng-template>
+  <ng-template [ngSwitchCase]="2">
+    <div>Two</div>
+  </ng-template>
+  <ng-template [ngSwitchCase]="3">
+    <div>Three</div>
+  </ng-template>
+  <ng-template ngSwitchDefault>
+    <div>This is default</div>
+  </ng-template>
+</div>
+
 <h1>Simple component</h1>
 <app-simple></app-simple>
 

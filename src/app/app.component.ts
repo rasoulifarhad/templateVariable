@@ -1,5 +1,10 @@
 import { Component, Input, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 
+class Movie {
+
+  constructor(public  title: string, public director: string){}
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,4 +25,16 @@ export class AppComponent {
   }
 
   selected = false;
+
+  movies = [
+    new Movie("title 1", "director 1"),
+    new Movie("title 2", "director 2"),
+    new Movie("title 3", "director 3"),
+  ]
+
+  trackById(index: number, movie: Movie) {
+    return index;
+  }
+
+  num?: number;
 }
