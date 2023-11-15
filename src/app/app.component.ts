@@ -37,4 +37,9 @@ export class AppComponent {
   }
 
   num?: number;
+
+  sayHello(firstNameElement: HTMLInputElement,lastNameElement: HTMLInputElement) {
+    alert('Hello ' + firstNameElement.value +  ' ' + lastNameElement.value);
+  }
+
 }

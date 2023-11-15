@@ -119,6 +119,25 @@
   </ng-template>
 </div>
 
+<h1>Template Reference variable Example</h1>
+
+<h2>Html element</h2>
+<p>
+  <label for="firstName">First Name:</label>
+  <input (keyup)="0" type="text" #firstName id="firstName">
+</p>
+<p>
+  <label for="lastName">Last Name:</label>
+  <input (keyup)="0" type="text" #lastName id="lastName">
+</p>
+<b>Welcome {{firstName.value}} {{lastName.value}}</b>
+
+<h2>Pass Variable to Component class</h2>
+<p>
+  <button (click)="sayHello(firstName, lastName)">Say Hello</button>
+</p>
+
+
 <h1>Simple component</h1>
 <app-simple></app-simple>
 
